@@ -17,22 +17,10 @@ export const HeroContent = () => {
       className="flex flex-col md:flex-row items-center justify-center px-6 md:px-20 mt-40 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        {/* Profile Image - Circular with Glow */}
-        <motion.div variants={slideInFromTop}>
-          <Image
-            src="/profile.png"
-            alt="Lethukuthula Mthiyane"
-            width={140}
-            height={140}
-            className="rounded-full profile-glow object-cover"
-            draggable={false}
-          />
-        </motion.div>
-
         {/* Name with Platinum Glossy Effect */}
         <motion.h1
-          variants={slideInFromLeft(0.3)}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold name-glossy mt-4"
+          variants={slideInFromTop}
+          className="text-4xl md:text-6xl lg:text-7xl font-bold name-glossy"
         >
           Lethukuthula Mthiyane
         </motion.h1>
@@ -78,7 +66,7 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Hero Animation - UNTOUCHED */}
+      {/* Hero Image */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center mt-10 md:mt-0"
