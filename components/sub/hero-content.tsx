@@ -17,9 +17,21 @@ export const HeroContent = () => {
       className="flex flex-col md:flex-row items-center justify-center px-6 md:px-20 mt-40 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+        {/* Profile Image */}
+        <motion.div variants={slideInFromTop}>
+          <Image
+            src="/profile.png"
+            alt="Lethukuthula Mthiyane"
+            width={120}
+            height={120}
+            className="rounded-full profile-glow object-cover"
+            draggable={false}
+          />
+        </motion.div>
+
         {/* Name with Platinum Glossy Effect */}
         <motion.h1
-          variants={slideInFromTop}
+          variants={slideInFromLeft(0.4)}
           className="text-4xl md:text-6xl lg:text-7xl font-bold name-glossy"
         >
           Lethukuthula Mthiyane
@@ -27,7 +39,7 @@ export const HeroContent = () => {
 
         {/* Tagline */}
         <motion.p
-          variants={slideInFromLeft(0.5)}
+          variants={slideInFromLeft(0.6)}
           className="text-2xl md:text-3xl lg:text-4xl font-medium text-gray-300 max-w-[600px]"
         >
           Data meets design.
@@ -36,7 +48,7 @@ export const HeroContent = () => {
         {/* Single CTA */}
         <motion.div
           variants={slideInFromLeft(0.8)}
-          className="mt-6"
+          className="mt-4"
         >
           <a
             href="#projects"
@@ -46,10 +58,10 @@ export const HeroContent = () => {
           </a>
         </motion.div>
 
-        {/* Subtle Stats */}
+        {/* Stats */}
         <motion.div
           variants={slideInFromLeft(1)}
-          className="flex flex-wrap gap-8 md:gap-12 mt-12 opacity-80"
+          className="flex flex-wrap gap-8 md:gap-12 mt-10 opacity-80"
         >
           <div className="text-center">
             <p className="stats-number text-2xl md:text-3xl font-bold">4+</p>
@@ -66,7 +78,7 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Hero Image */}
+      {/* Hero Animation - UNTOUCHED */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center mt-10 md:mt-0"
