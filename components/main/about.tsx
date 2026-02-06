@@ -18,7 +18,6 @@ export const About = () => {
       id="about-me"
       className="flex flex-col items-center justify-center min-h-screen py-20 px-6 md:px-20 relative"
     >
-      {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +29,6 @@ export const About = () => {
       </motion.h2>
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 max-w-6xl w-full">
-        {/* Profile Image */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -47,11 +45,9 @@ export const About = () => {
               className="rounded-full profile-glow object-cover"
               draggable={false}
             />
-            {/* Decorative ring */}
             <div className="absolute -inset-4 rounded-full border border-[#A855F7]/30 animate-pulse" />
           </div>
 
-          {/* Contact Badges */}
           <div className="flex flex-col gap-3 mt-8">
             <div className="contact-badge">
               <HiOutlineLocationMarker className="w-5 h-5" />
@@ -74,7 +70,6 @@ export const About = () => {
           </div>
         </motion.div>
 
-        {/* Bio Content */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -98,7 +93,6 @@ export const About = () => {
             Creator at heart. Engineer by craft. Problem solver by obsession.
           </p>
 
-          {/* Resume Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="/resume.pdf"
@@ -119,9 +113,7 @@ export const About = () => {
             </a>
           </div>
 
-          {/* Experience & Education Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
-            {/* Experience */}
             <div className="stats-card">
               <h4 className="text-[#A855F7] font-semibold mb-3 text-lg">Experience</h4>
               <div className="text-left space-y-2 text-sm">
@@ -136,7 +128,6 @@ export const About = () => {
               </div>
             </div>
 
-            {/* Education */}
             <div className="stats-card">
               <h4 className="text-[#A855F7] font-semibold mb-3 text-lg">Education</h4>
               <div className="text-left space-y-2 text-sm">
@@ -152,7 +143,6 @@ export const About = () => {
             </div>
           </div>
 
-          {/* Certifications */}
           <div className="mt-6">
             <h4 className="text-[#A855F7] font-semibold mb-3">Certifications</h4>
             <div className="flex flex-wrap gap-2">
