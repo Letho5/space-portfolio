@@ -146,7 +146,12 @@ export const FULLSTACK_SKILL = [
   },
 ] as const;
 
-export const OTHER_SKILL = [] as const;
+export const OTHER_SKILL: {
+  skill_name: string;
+  image: string;
+  width: number;
+  height: number;
+}[] = [];
 
 // Projects
 export const PROJECTS: {
