@@ -366,3 +366,37 @@ html {
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+/* ============================================
+   PLATINUM ELEGANCE - NAME STYLING
+   Cool silver with animated light sweep
+   Premium, luxury brand feel
+   ============================================ */
+
+.name-glossy {
+  background: linear-gradient(
+    120deg,
+    #6b7280 0%,
+    #9ca3af 15%,
+    #e5e7eb 30%,
+    #ffffff 50%,
+    #e5e7eb 70%,
+    #9ca3af 85%,
+    #6b7280 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: platinum-shimmer 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.15))
+          drop-shadow(0 0 80px rgba(156, 163, 175, 0.1));
+}
+
+@keyframes platinum-shimmer {
+  0%, 100% {
+    background-position: 200% center;
+  }
+  50% {
+    background-position: -200% center;
+  }
+}
