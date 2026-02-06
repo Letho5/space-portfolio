@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { SkillDataProvider } from "@/components/sub/skill-data-provider";
-import { SkillText } from "@/components/sub/skill-text";
 
 import {
   BACKEND_SKILL,
@@ -11,103 +10,61 @@ import {
 } from "@/constants";
 
 export const Skills = () => {
+  const allSkills = [...FRONTEND_SKILL, ...BACKEND_SKILL, ...FULLSTACK_SKILL];
+
   return (
     <section
       id="skills"
-      style={{ transform: "scale(0.9)" }}
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
+      className="flex flex-col items-center justify-center relative overflow-hidden py-20"
     >
-      <SkillText />
+      {/* 3D Sphere Video - FULLY VISIBLE */}
+      <div className="w-full flex items-center justify-center">
+        <video
+          className="w-full max-w-5xl h-auto"
+          preload="false"
+          playsInline
+          loop
+          muted
+          autoPlay
+        >
+          <source src="/videos/skills-bg.webm" type="video/webm" />
+        </video>
+      </div>
 
-      {/* Row 1: AI/ML Skills */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
+      {/* Statement in Rose Gold */}
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="flex flex-col items-center mt-8"
+        className="statement-glossy text-xl md:text-2xl lg:text-3xl text-center max-w-3xl px-6 mt-12 mb-16 leading-relaxed font-medium"
       >
-        <span className="text-sm text-[#A855F7] font-medium mb-4 tracking-wider uppercase">
-          AI & Machine Learning
-        </span>
-        <div className="flex flex-row justify-center flex-wrap gap-5 items-center">
-          {FRONTEND_SKILL.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i}
-            />
-          ))}
-        </div>
-      </motion.div>
+        Creator at heart. I love watching ideas come to life, seeing hard work yield results. But above all — teamwork makes the dream work.
+      </motion.p>
 
-      {/* Row 2: Full Stack Skills */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="flex flex-col items-center mt-8"
-      >
-        <span className="text-sm text-[#A855F7] font-medium mb-4 tracking-wider uppercase">
-          Full Stack Development
-        </span>
-        <div className="flex flex-row justify-center flex-wrap gap-5 items-center">
-          {BACKEND_SKILL.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i}
-            />
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Row 3: Tools */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="flex flex-col items-center mt-8"
-      >
-        <span className="text-sm text-[#A855F7] font-medium mb-4 tracking-wider uppercase">
-          Tools & Platforms
-        </span>
-        <div className="flex flex-row justify-center flex-wrap gap-5 items-center">
-          {FULLSTACK_SKILL.map((skill, i) => (
-            <SkillDataProvider
-              key={skill.skill_name}
-              src={skill.image}
-              name={skill.skill_name}
-              width={skill.width}
-              height={skill.height}
-              index={i}
-            />
-          ))}
-        </div>
-      </motion.div>
-
-      {/* Background Video - KEPT FROM ORIGINAL */}
-      <div className="w-full h-full absolute">
-        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
-          <video
-            className="w-full h-auto"
-            preload="false"
-            playsInline
-            loop
-            muted
-            autoPlay
+      {/* Skills - Consecutive Animation */}
+      <div className="flex flex-row justify-center flex-wrap gap-6 items-center max-w-5xl px-6">
+        {allSkills.map((skill, i) => (
+          <motion.div
+            key={skill.skill_name}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: i * 0.08,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, margin: "-50px" }}
           >
-            <source src="/videos/skills-bg.webm" type="video/webm" />
-          </video>
-        </div>
+            <SkillDataProvider
+              src={skill.image}
+              name={skill.skill_name}
+              width={skill.width}
+              height={skill.height}
+              index={i}
+            />
+          </motion.div>
+        ))}
       </div>
     </section>
   );
