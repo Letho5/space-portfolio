@@ -2,13 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { 
-  HiOutlineLocationMarker, 
-  HiOutlineMail, 
-  HiOutlinePhone,
-  HiOutlineDownload,
-  HiOutlineExternalLink
-} from "react-icons/hi";
+import { HiOutlineDownload } from "react-icons/hi";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 import { slideInFromLeft, slideInFromRight } from "@/lib/motion";
 
@@ -16,141 +11,116 @@ export const About = () => {
   return (
     <section
       id="about-me"
-      className="flex flex-col items-center justify-center min-h-screen py-20 px-6 md:px-20 relative"
+      className="flex flex-col items-center justify-center min-h-screen py-20 px-6 md:px-20"
     >
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-bold section-title-glow mb-16 text-center"
-      >
-        About Me
-      </motion.h2>
-
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 max-w-6xl w-full">
+      <div className="flex flex-col items-center max-w-2xl w-full">
+        {/* Profile Image */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={slideInFromLeft(0.5)}
-          className="flex flex-col items-center"
+          variants={slideInFromLeft(0.3)}
         >
-          <div className="relative">
-            <Image
-              src="/profile.png"
-              alt="Lethukuthula Mthiyane"
-              width={280}
-              height={280}
-              className="rounded-full profile-glow object-cover"
-              draggable={false}
-            />
-            <div className="absolute -inset-4 rounded-full border border-[#A855F7]/30 animate-pulse" />
-          </div>
-
-          <div className="flex flex-col gap-3 mt-8">
-            <div className="contact-badge">
-              <HiOutlineLocationMarker className="w-5 h-5" />
-              <span>Sandton, South Africa</span>
-            </div>
-            <a 
-              href="mailto:lethukuthulanothandomthiyane@gmail.com"
-              className="contact-badge hover:border-[#A855F7] cursor-pointer"
-            >
-              <HiOutlineMail className="w-5 h-5" />
-              <span className="text-sm">lethukuthulanothandomthiyane@gmail.com</span>
-            </a>
-            <a 
-              href="tel:+27610120465"
-              className="contact-badge hover:border-[#A855F7] cursor-pointer"
-            >
-              <HiOutlinePhone className="w-5 h-5" />
-              <span>+27 61 012 0465</span>
-            </a>
-          </div>
+          <Image
+            src="/profile.png"
+            alt="Lethukuthula Mthiyane"
+            width={180}
+            height={180}
+            className="rounded-full profile-glow object-cover"
+            draggable={false}
+          />
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
+        {/* Name */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          variants={slideInFromRight(0.5)}
-          className="flex flex-col max-w-xl"
+          className="text-3xl md:text-4xl font-bold text-white mt-8"
         >
-          <p className="text-gray-300 text-lg leading-relaxed mb-6">
-            I&apos;m <span className="text-highlight">Lethukuthula Mthiyane</span> — a Full Stack AI Engineer who speaks fluent Python and JavaScript, and a Data Scientist who transforms raw chaos into intelligent systems.
-          </p>
-          
-          <p className="text-gray-400 leading-relaxed mb-6">
-            While others see two separate worlds, I see one seamless pipeline: from the database to the neural network to the pixel-perfect interface. I don&apos;t just build applications — I architect end-to-end intelligent experiences.
-          </p>
-          
-          <p className="text-gray-400 leading-relaxed mb-6">
-            Currently crafting data-driven solutions at <span className="text-[#A855F7]">BCX</span>, I bring a unique ability to build the entire stack AND make it intelligent.
-          </p>
-          
-          <p className="text-gray-300 italic mb-8">
-            Creator at heart. Engineer by craft. Problem solver by obsession.
-          </p>
+          Lethukuthula Mthiyane
+        </motion.h2>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="/resume.pdf"
-              download="Lethukuthula_Mthiyane_Resume.pdf"
-              className="resume-btn button-glow"
-            >
-              <HiOutlineDownload className="w-5 h-5" />
-              Download Resume
-            </a>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-btn button-outline-glow"
-            >
-              <HiOutlineExternalLink className="w-5 h-5" />
-              View Resume
-            </a>
-          </div>
+        {/* Title */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-lg md:text-xl text-gray-400 mt-2"
+        >
+          Data Scientist & AI Engineer
+        </motion.p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
-            <div className="stats-card">
-              <h4 className="text-[#A855F7] font-semibold mb-3 text-lg">Experience</h4>
-              <div className="text-left space-y-2 text-sm">
-                <div>
-                  <p className="text-white font-medium">Data Scientist Intern</p>
-                  <p className="text-gray-400">BCX • Current</p>
-                </div>
-                <div>
-                  <p className="text-white font-medium">Data Science Trainee</p>
-                  <p className="text-gray-400">Explore AI • Previous</p>
-                </div>
-              </div>
-            </div>
+        {/* Credentials */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.4 }}
+  viewport={{ once: true }}
+  className="text-center mt-8 space-y-1"
+>
+  <p className="text-gray-300">
+    Currently at <span className="text-white font-medium">CAPACITI</span>. 
+    Previously <span className="text-white font-medium">BCX</span>.
+  </p>
+  <p className="text-gray-500">
+    BSc Computer Science & Physics. BSc Honours Computing (2026).
+  </p>
+</motion.div>
 
-            <div className="stats-card">
-              <h4 className="text-[#A855F7] font-semibold mb-3 text-lg">Education</h4>
-              <div className="text-left space-y-2 text-sm">
-                <div>
-                  <p className="text-white font-medium">BSc Honours Computing</p>
-                  <p className="text-gray-400">UNISA • Expected 2026</p>
-                </div>
-                <div>
-                  <p className="text-white font-medium">BSc Computer Science & Physics</p>
-                  <p className="text-gray-400">University of Zululand</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Resume CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-10"
+        >
+          <a
+            href="/resume.pdf"
+            download="Lethukuthula_Mthiyane_Resume.pdf"
+            className="inline-flex items-center gap-2 py-3 px-8 button-glow rounded-lg font-semibold text-white"
+          >
+            <HiOutlineDownload className="w-5 h-5" />
+            Download Resume
+          </a>
+        </motion.div>
 
-          <div className="mt-6">
-            <h4 className="text-[#A855F7] font-semibold mb-3">Certifications</h4>
-            <div className="flex flex-wrap gap-2">
-              <span className="tech-badge">IT Systems Development (NQF 5)</span>
-              <span className="tech-badge">AI Bootcamp Certificate</span>
-              <span className="tech-badge">Google Data Analytics</span>
-            </div>
-          </div>
+        {/* Social Icons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-6 mt-10"
+        >
+          <a
+            href="https://github.com/Letho5"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="social-icon-glow"
+          >
+            <FiGithub className="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/lethukuthulamthiyane/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="social-icon-glow"
+          >
+            <FiLinkedin className="w-6 h-6" />
+          </a>
+          <a
+            href="mailto:lethukuthulanothandomthiyane@gmail.com"
+            aria-label="Email"
+            className="social-icon-glow"
+          >
+            <FiMail className="w-6 h-6" />
+          </a>
         </motion.div>
       </div>
     </section>
