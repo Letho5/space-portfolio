@@ -17,17 +17,17 @@ export const HeroContent = () => {
       className="flex flex-col md:flex-row items-center justify-center px-6 md:px-20 mt-40 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        {/* Profile Image */}
-        <motion.div variants={slideInFromTop}>
-          <Image
-            src="/profile.png"
-            alt="Lethukuthula Mthiyane"
-            width={120}
-            height={120}
-            className="rounded-full profile-glow object-cover"
-            draggable={false}
-          />
-        </motion.div>
+       {/* Profile Image - CHANGED TO PERFECT CIRCLE */}
+<motion.div variants={slideInFromTop}>
+  <Image
+    src="/profile.png"
+    alt="Lethukuthula Mthiyane"
+    width={120}
+    height={120}
+    className="w-[120px] h-[120px] rounded-full profile-glow object-cover object-[50%_30%]"
+    draggable={false}
+  />
+</motion.div>
 
         {/* Name with Platinum Glossy Effect */}
         <motion.h1
