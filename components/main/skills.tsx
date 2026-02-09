@@ -14,34 +14,9 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center h-full relative overflow-hidden py-20"
+      style={{ transform: "scale(0.9)" }}
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
     >
-      {/* 3D Sphere Video - Full Opacity, Standalone */}
-      <div className="w-full flex items-center justify-center mb-8">
-        <video
-          className="w-full max-w-4xl h-auto"
-          preload="false"
-          playsInline
-          loop
-          muted
-          autoPlay
-        >
-          <source src="/videos/skills-bg.webm" type="video/webm" />
-        </video>
-      </div>
-
-      {/* Rose Gold Statement */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="statement-glossy text-xl md:text-2xl lg:text-3xl text-center max-w-3xl px-6 mb-16 leading-relaxed font-medium"
-      >
-        Creator at heart. I love watching ideas come to life, seeing hard work yield results. But above all — teamwork makes the dream work.
-      </motion.p>
-
-      {/* Skills Header */}
       <SkillText />
 
       {/* Row 1: AI/ML Skills */}
@@ -118,6 +93,22 @@ export const Skills = () => {
           ))}
         </div>
       </motion.div>
+
+      {/* Background Video - KEPT FROM ORIGINAL */}
+      <div className="w-full h-full absolute">
+        <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
+          <video
+            className="w-full h-auto"
+            preload="false"
+            playsInline
+            loop
+            muted
+            autoPlay
+          >
+            <source src="/videos/skills-bg.webm" type="video/webm" />
+          </video>
+        </div>
+      </div>
     </section>
   );
 };
