@@ -169,7 +169,7 @@ export const PROJECTS: {
     image: "/projects/izwi.PNG",
     link: "https://www.izwi-ai.co.za/",
     category: "Accessibility AI",
-    techStack: ["React", "Gemini AI", "Tesseract.js", "PWA"],
+    techStack: ["React", "Claude AI", "Tesseract.js", "PWA"],
   },
   {
     title: "DermaScan AI",
