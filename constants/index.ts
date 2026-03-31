@@ -166,7 +166,7 @@ export const PROJECTS: {
     title: "IZWI",
     description:
       "AI accessibility PWA giving voice to non-verbal and blind South Africans. Text-to-speech in 5 local languages and computer vision for independence.",
-    image: "/projects/izwi.png",
+    image: "/projects/izwi.PNG",
     link: "https://www.izwi-ai.co.za/",
     category: "Accessibility AI",
     techStack: ["React", "Gemini AI", "Tesseract.js", "PWA"],
