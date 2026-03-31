@@ -163,31 +163,40 @@ export const PROJECTS: {
   techStack: string[];
 }[] = [
   {
+    title: "IZWI",
+    description:
+      "AI accessibility PWA giving voice to non-verbal and blind South Africans. Text-to-speech in 5 local languages and computer vision for independence.",
+    image: "/projects/izwi.png",
+    link: "https://www.izwi-ai.co.za/",
+    category: "Accessibility AI",
+    techStack: ["React", "Gemini AI", "Tesseract.js", "PWA"],
+  },
+  {
     title: "DermaScan AI",
     description:
-      "Intelligent skin health assistant powered by computer vision. Analyzes skin conditions, detects potentially malignant moles, and connects users with dermatologists. Built with TensorFlow and Python for accessible healthcare.",
+      "Skin health assistant powered by computer vision. Detects potentially malignant moles and connects users with dermatologists.",
     image: "/projects/project-1.png",
     link: "https://whale-jet-96625023.figma.site/",
     category: "Healthcare AI",
-    techStack: ["Computer Vision", "TensorFlow", "Python", "Flask"],
+    techStack: ["TensorFlow", "Python", "Flask"],
   },
   {
     title: "Unibridge",
     description:
-      "Comprehensive accessibility platform for vision impaired, deaf, and speech impaired users. Features text-to-speech, speech-to-text, and real-time translation. Breaking barriers through AI-powered technology.",
+      "Accessibility platform for vision impaired, deaf, and speech impaired users with real-time translation.",
     image: "/projects/project-2.png",
     link: "https://unibridge-web-kappa.vercel.app/",
     category: "Accessibility Tech",
-    techStack: ["Speech Recognition", "NLP", "JavaScript", "React"],
+    techStack: ["Speech Recognition", "NLP", "React"],
   },
   {
     title: "DEEPA",
     description:
-      "AI-powered marketing tool that generates ad scripts, social media posts, and branded content. Leverages generative AI and NLP to empower businesses with intelligent content creation.",
+      "AI marketing tool generating ad scripts and social media content using generative AI.",
     image: "/projects/project-3.png",
     link: "https://deepa-techsav-oft9uaxeh-lethukuthula-mthiyanes-projects.vercel.app/",
     category: "Marketing AI",
-    techStack: ["Generative AI", "NLP", "React", "Node.js"],
+    techStack: ["Generative AI", "NLP", "Node.js"],
   },
 ];
 
